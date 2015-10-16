@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BostonHacks</string>
+    <string name="one">Schedule</string>
+    <string name="two">Announcements</string>
+    <string name="three">Community</string>
+    <string name="four">Maps</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
