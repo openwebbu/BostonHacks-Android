@@ -1,3 +1,3 @@
 # BostonHacks
 
-Android App for BostonHacks 2015!
+Android App for [BostonHacks](http://bostonhacks.io) 2015!
