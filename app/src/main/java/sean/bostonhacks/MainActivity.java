@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.drawable.ic_timelapse_white_24dp,
+            R.drawable.ic_event_note_white_24dp,
             R.drawable.ic_announcement_white_24dp,
             R.drawable.ic_people_white_24dp,
             R.drawable.ic_map_white_24dp,
