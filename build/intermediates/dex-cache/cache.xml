@@ -2,39 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jar="/Users/Sean/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.3/36366e460af2c0f224bb8f70b64e3302f638b138/parse-android-1.10.3.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/classes-30c4b962f343ad4415f9b918aa59f0c7f457e84d.jar" />
+        sha1="36366e460af2c0f224bb8f70b64e3302f638b138">
+        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/parse-android-1.10.3-23686f2d552417bb40b6905854c1cfe284610cec.jar" />
     </item>
     <item
-        jar="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jar="/Users/Sean/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.1/44780c2cf98f6a3cf4e77f1234d644758b329201/bolts-android-1.2.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/classes-14039714541cfdc7203203f43d68202126623ce7.jar" />
-    </item>
-    <item
-        jar="/dev-tools/adt-bundle-mac-x86_64-20140624/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-0f8d8ac446d2e82662f89128f159334995e4703c.jar" />
-    </item>
-    <item
-        jar="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/classes-0c6820b61d20aa734bc94c1bd501f37b20aa66ea.jar" />
-    </item>
-    <item
-        jar="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-ff162f8a124d68fd2e9a3bf7d8aaa85d4c3b027f.jar" />
+        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
+        <dex dex="/Users/Sean/Documents/Coding/BostonHacks/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.1-bf315f69eee5aede01d37dcb6cebcce5d0aecd59.jar" />
     </item>
 
 </items>

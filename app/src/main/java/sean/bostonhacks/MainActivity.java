@@ -9,6 +9,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+
+        Parse.initialize(this, "EWm45pIZTDbnjwhUIl09dUM0aM9lygXaicaiHmvv", "fJSWol5CBlMNNw2pCWOjSKnYdx4jsi94R82lhDt7");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
     }
 
     private void setupTabIcons() {
@@ -48,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(4).setIcon(tabIcons[4]);
-
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
