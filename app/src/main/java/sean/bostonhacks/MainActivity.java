@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -45,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        Parse.initialize(this, "EWm45pIZTDbnjwhUIl09dUM0aM9lygXaicaiHmvv", "fJSWol5CBlMNNw2pCWOjSKnYdx4jsi94R82lhDt7");
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+
     }
 
     private void setupTabIcons() {
@@ -96,4 +96,5 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
+
 }
