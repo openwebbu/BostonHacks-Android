@@ -12,10 +12,10 @@ import android.widget.Toast;
 /**
  * Created by lawrluor on 10/20/15.
  */
-public class MyListFragment extends ListFragment implements AdapterView.OnItemClickListener {
+public class ScheduleListFragment extends ListFragment implements AdapterView.OnItemClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.my_list_fragment, container, false);
+        return inflater.inflate(R.layout.schedule_list_fragment, container, false);
     }
 
     @Override
