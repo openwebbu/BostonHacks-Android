@@ -1,5 +1,6 @@
 package sean.bostonhacks;
 
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.app.ListActivity;
 import android.support.v4.app.ListFragment;
@@ -34,12 +35,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener {
     private List<Schedule> posts;
 
-    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private SwipeRefreshLayout swipeLayout;
     private CustomListAdapterSchedule mAdapter;
+    private Handler handler = new Handler();
+
 
 
     public OneFragment() {
@@ -51,7 +53,6 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
         super.onCreate(savedInstanceState);
 
         posts = new ArrayList<Schedule>();
-
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,42 +62,63 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 //        mSwipeRefreshLayout.setOnRefreshListener(this);
 
         // Inflate the layout for this fragment
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_one,container,false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_one, container, false);
+        swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
+        swipeLayout.setOnRefreshListener(this);
+
+
         //create adapter
         mAdapter = new CustomListAdapterSchedule(getActivity(), android.R.id.list, posts);
-                //bind adapter to listfragment
+        //bind adapter to listfragment
         setListAdapter(mAdapter);
         refreshPostList();
-        return rootView;
 
+        return rootView;
     }
+
+    /**
+     * This method is called when swipe refresh is pulled down
+     */
+    @Override
+    public void onRefresh() {
+        refreshPostList();
+        swipeLayout.setColorSchemeResources(R.color.colorPrimary);
+    }
+
+
     private void refreshPostList() {
+
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Events");
 
         query.findInBackground(new FindCallback<ParseObject>() {
-
             @Override
             public void done(List<ParseObject> postList, ParseException e) {
+                swipeLayout.setRefreshing(false);
                 if (e == null) {
                     // If there are results, update the list of posts
                     // and notify the adapter
+                    swipeLayout.setRefreshing(true);
                     posts.clear();
                     for (ParseObject post : postList) {
-                        Schedule note = new Schedule(post.getObjectId(), post.getString("title"), post.getString("location"),post.getDate("date"));
+                        Schedule note = new Schedule(post.getObjectId(), post.getString("title"), post.getString("location"), post.getDate("date"));
                         posts.add(note);
                     }
                     ((ArrayAdapter<Schedule>) getListAdapter()).notifyDataSetChanged();
+                    swipeLayout.setRefreshing(false);
+
                 } else {
+
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
                 }
+                swipeLayout.setRefreshing(false);
             }
         });
-    }
 
-    @Override
-    public void onRefresh() {
 
     }
+
+
+
 }
 
