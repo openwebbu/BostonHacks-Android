@@ -5,10 +5,12 @@ import android.app.ListActivity;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -33,8 +35,12 @@ import java.util.List;
 
 
 
-public class OneFragment extends ListFragment {
-    private List<Note> posts;
+public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener {
+    private List<Schedule> posts;
+
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private CustomListAdapterSchedule mAdapter;
+
 
     public OneFragment() {
         // Required empty public constructor
@@ -44,28 +50,29 @@ public class OneFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        posts = new ArrayList<Note>();
-        // ArrayAdapter<event> adapter = new ArrayAdapter<event>(this, R.layout.list_item, events);
-        //setListAdapter(adapter);
+        posts = new ArrayList<Schedule>();
 
-        //refreshEventsList();
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //create swiperefresh
+//        mSwipeRefreshLayout = (SwipeRefreshLayout) mSwipeRefreshLayout.findViewById((R.id.swipeSchedule));
+//        mSwipeRefreshLayout.setOnRefreshListener(this);
+
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_one,container,false);
         //create adapter
-        ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(getActivity(), R.layout.rowlayout,R.id.textitem,posts);
-        //bind adapter to listfragment
-        setListAdapter(adapter);
+        mAdapter = new CustomListAdapterSchedule(getActivity(), android.R.id.list, posts);
+                //bind adapter to listfragment
+        setListAdapter(mAdapter);
         refreshPostList();
         return rootView;
 
     }
     private void refreshPostList() {
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Events");
 
         query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -76,15 +83,20 @@ public class OneFragment extends ListFragment {
                     // and notify the adapter
                     posts.clear();
                     for (ParseObject post : postList) {
-                        Note note = new Note(post.getObjectId(), post.getString("title"), post.getString("content"));
+                        Schedule note = new Schedule(post.getObjectId(), post.getString("title"), post.getString("location"),post.getDate("date"));
                         posts.add(note);
                     }
-                    ((ArrayAdapter<Note>) getListAdapter()).notifyDataSetChanged();
+                    ((ArrayAdapter<Schedule>) getListAdapter()).notifyDataSetChanged();
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
                 }
             }
         });
+    }
+
+    @Override
+    public void onRefresh() {
+
     }
 }
 

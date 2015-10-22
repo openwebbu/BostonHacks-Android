@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.app.ListFragment;
@@ -18,7 +19,7 @@ import com.parse.ParseObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -38,7 +39,7 @@ public class MainActivity extends FragmentActivity {
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -48,9 +49,9 @@ public class MainActivity extends FragmentActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
+//        ParseObject testObject = new ParseObject("TestObject");
+//        testObject.put("foo", "bar");
+//        testObject.saveInBackground();
 
 
     }
@@ -60,7 +61,7 @@ public class MainActivity extends FragmentActivity {
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
-        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+//        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -69,7 +70,7 @@ public class MainActivity extends FragmentActivity {
         adapter.addFrag(new TwoFragment(), "TWO");
         adapter.addFrag(new ThreeFragment(), "THREE");
         adapter.addFrag(new FourFragment(), "four");
-        adapter.addFrag(new FiveFragment(), "Five");
+//        adapter.addFrag(new FiveFragment(), "Five");
 
         viewPager.setAdapter(adapter);
     }

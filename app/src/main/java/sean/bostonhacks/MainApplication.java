@@ -11,7 +11,7 @@ import com.parse.ParseObject;
 public class MainApplication extends Application {
     public void onCreate(){
         Parse.enableLocalDatastore(getApplicationContext());
-        Parse.initialize(this, "EWm45pIZTDbnjwhUIl09dUM0aM9lygXaicaiHmvv", "fJSWol5CBlMNNw2pCWOjSKnYdx4jsi94R82lhDt7");
+        Parse.initialize(this, "TpddRNEVg1gw0BJmle7yrRgiLYqAbLLJQN1mJTDC", "GKgjTZIeq6BsNKUFLAlqGUbpSwHs0RNPeWPoC6w5");
         ParseInstallation.getCurrentInstallation().saveInBackground();
 
 
