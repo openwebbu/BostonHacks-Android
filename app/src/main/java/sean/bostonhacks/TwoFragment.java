@@ -13,6 +13,8 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.google.common.collect.Lists;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
@@ -38,7 +40,7 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
     private List<Announcements> announcements;
     private CustomListAdapterAnnouncements mAdapter;
 
-    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private SwipeRefreshLayout swipeLayout;
 
     public TwoFragment() {
         // Required empty public constructor
@@ -54,12 +56,14 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //create swiperefresh
-//        mSwipeRefreshLayout = (SwipeRefreshLayout) mSwipeRefreshLayout.findViewById((R.id.swipeSchedule));
-//        mSwipeRefreshLayout.setOnRefreshListener(this);
 
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_two,container,false);
+
+        //refresh thing
+        swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
+        swipeLayout.setOnRefreshListener(this);
+
         //create adapter
         mAdapter = new CustomListAdapterAnnouncements(getActivity(), android.R.id.list, announcements);
         //bind adapter to listfragment
@@ -68,6 +72,16 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
         return rootView;
 
     }
+
+    /**
+     * This method is called when swipe refresh is pulled down
+     */
+    @Override
+    public void onRefresh() {
+        refreshAnnouncementsList();
+        swipeLayout.setColorSchemeResources(R.color.colorPrimary);
+    }
+
     private void refreshAnnouncementsList() {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Announcements");
@@ -76,25 +90,26 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 
             @Override
             public void done(List<ParseObject> postList, ParseException e) {
+                swipeLayout.setRefreshing(false);
                 if (e == null) {
                     // If there are results, update the list of posts
                     // and notify the adapter
+                    swipeLayout.setRefreshing(true);
                     announcements.clear();
-                    for (ParseObject post : postList) {
+                    for (ParseObject post : Lists.reverse(postList)) {
                         Announcements note = new Announcements(post.getObjectId(), post.getString("title"), post.getString("description"), post.getCreatedAt());
                         announcements.add(note);
                     }
                     ((ArrayAdapter<Announcements>) getListAdapter()).notifyDataSetChanged();
+                    swipeLayout.setRefreshing(false);
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
                 }
+                swipeLayout.setRefreshing(false);
             }
         });
     }
 
-    @Override
-    public void onRefresh() {
 
-    }
 }
 

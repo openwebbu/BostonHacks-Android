@@ -57,9 +57,6 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //create swiperefresh
-//        mSwipeRefreshLayout = (SwipeRefreshLayout) mSwipeRefreshLayout.findViewById((R.id.swipeSchedule));
-//        mSwipeRefreshLayout.setOnRefreshListener(this);
 
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_one, container, false);
