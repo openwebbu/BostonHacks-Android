@@ -30,5 +30,6 @@
         android:layout_height="fill_parent"
         android:layout_gravity="fill"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="100dp" />
+        android:paddingBottom="56dp"
+        android:clipToPadding="false" />
 </android.support.design.widget.CoordinatorLayout>
