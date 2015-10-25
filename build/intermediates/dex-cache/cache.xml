@@ -2,11 +2,60 @@
 <items version="2" >
 
     <item
-        jar="/Users/Sean/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"
+        jar="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/classes-1f79315f47912443f25ecc1664df5b8bcd62cdb8.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.1/44780c2cf98f6a3cf4e77f1234d644758b329201/bolts-android-1.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.1-037c8fdf2aecf2b8122ef0f5d47ba17480c4e50f.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-28c1621f727ad4cbc9608dcc1dbc1b63956ca452.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/classes-8444a988cad894d4abd8e097a22c1e91fce4d2e7.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-e88725cac84d36645d476f8cfcebbc99bd5db9c8.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="cce0823396aa693798f8882e64213b1772032b09">
-        <dex dex="/Users/Sean/Documents/Coding/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/guava-18.0-e4bb7805ec5e702dcca38cc14bb0424ffcba97ac.jar" />
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/guava-18.0-4e7bbb8f95b7e91505056ccb04d7e389b7292a2e.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/classes-a6e7290d2cd6194d2aab3f6df5cc16966b4de9d1.jar" />
+    </item>
+    <item
+        jar="/Users/lawrluor/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.3/36366e460af2c0f224bb8f70b64e3302f638b138/parse-android-1.10.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="36366e460af2c0f224bb8f70b64e3302f638b138">
+        <dex dex="/Users/lawrluor/repos/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/parse-android-1.10.3-36171ddb052488f909312e6dc8ac86038b264d7d.jar" />
     </item>
 
 </items>
