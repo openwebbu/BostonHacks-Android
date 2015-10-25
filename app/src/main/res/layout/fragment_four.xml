@@ -8,6 +8,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/white"
         tools:context="info.androidhive.materialtabs.fragments.FourFragment"
         android:orientation="vertical">
 
@@ -21,8 +22,9 @@
             android:id="@+id/bostonhacks_legend"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="center"
-            android:src="@drawable/bostonhacks_legend" />
+            android:scaleType="centerInside"
+            android:src="@drawable/bostonhacks_legend"
+            android:layout_weight="1" />
 
     </TableRow>
 
@@ -36,10 +38,54 @@
             android:id="@+id/bostonhacks_floor3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="center"
+            android:scaleType="centerInside"
             android:src="@drawable/bostonhacks_floor3"
-            android:layout_weight="10" />
+            android:layout_weight="1" />
+    </TableRow>
 
+    <TableRow
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:weightSum="10">
+
+       <ImageView
+            android:id="@+id/bostonhacks_floor2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/bostonhacks_floor2"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <ImageView
+            android:id="@+id/bostonhacks_floor1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/bostonhacks_floor1"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <ImageView
+            android:id="@+id/bostonhacks_floor0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/bostonhacks_floor0"
+            android:layout_weight="1" />
     </TableRow>
 
 </LinearLayout>
