@@ -1,5 +1,7 @@
 package sean.bostonhacks;
 
+import android.text.format.DateUtils;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -11,6 +13,7 @@ public class Announcements {
     private String title;
     private String content;
     private Date timestamp;
+    private long milliseconds;
 
     Announcements(String noteId, String noteTitle, String noteContent, Date createdAt) {
         id = noteId;
@@ -48,10 +51,16 @@ public class Announcements {
             amPM = "PM";
         }
         String curTime = String.format("%02d:%02d", cal.get(cal.HOUR),cal.get(cal.MINUTE));
-        return cal.getDisplayName(cal.DAY_OF_WEEK, cal.SHORT, Locale.US) + " " + curTime + amPM;
+       // return cal.getDisplayName(cal.DAY_OF_WEEK, cal.SHORT, Locale.US) + " " + curTime + amPM;
+        milliseconds = timestamp.getTime();
+        CharSequence relativeDate = DateUtils.getRelativeTimeSpanString(milliseconds);
+        return relativeDate.toString();
     }
     public void setTimeStamp(Date createdAt){
         this.timestamp = createdAt;
+
+
+
     }
     @Override
     public String toString() {
