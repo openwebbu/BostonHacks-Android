@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.common.collect.Lists;
 import com.parse.FindCallback;
@@ -49,6 +49,13 @@ public class ThreeFragment extends ListFragment {
 
         //create adapter
         mAdapter = new CustomListAdapterCommunity(getActivity(), android.R.id.list, communityMembers);
+
+        // inflate custom header and attach it to the list
+        View header = (View) inflater.inflate(R.layout.header, null, false);
+
+        ListView mList = (ListView) rootView.findViewById(android.R.id.list);
+        mList.addHeaderView(header, null, false);
+
         //bind adapter to listfragment
         setListAdapter(mAdapter);
         refreshPostList();
