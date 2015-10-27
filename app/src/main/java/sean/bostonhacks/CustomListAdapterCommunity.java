@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,72 +22,98 @@ public class CustomListAdapterCommunity  extends ArrayAdapter<Community> {
     private ArrayList<String> list = new ArrayList<String>();
     private Context context;
 
-
     public CustomListAdapterCommunity(Context context, int textViewResourceId, List<Community> objects) {
         super(context, textViewResourceId, objects);
         // TODO Auto-generated constructor stub
         this.context = context;
     }
 
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
+
+    @Override
+    public int getItemViewType(int position){
+        Community communityItem = getItem(position);
+
+        if(communityItem.getRole() == "Director"){
+            return 0;
+        }
+        return 1;
+    }
+
     /*private view holder class*/
     private class ViewHolder {
         TextView name;
         TextView role;
-        Button twitter;
-        Button email;
+        ImageButton twitter;
+        ImageButton email;
+        ImageView slackHeader;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         final Community rowItem = getItem(position);
 
-        LayoutInflater mInflater = (LayoutInflater) context
-                .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        int viewType = getItemViewType(position);
+
+        LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.communitylayout, null);
             holder = new ViewHolder();
+
+            if(viewType == 0){
+                convertView = mInflater.inflate(R.layout.snippet1, null);
+                holder.slackHeader = (ImageView) convertView.findViewById(R.id.slackHeader);
+                holder.slackHeader.setImageResource(R.drawable.slack_banner);
+            }
             holder.name = (TextView) convertView.findViewById(R.id.name);
             holder.role = (TextView) convertView.findViewById(R.id.role);
-            holder.twitter = (Button) convertView.findViewById(R.id.twitter_btn);
-            holder.email = (Button) convertView.findViewById(R.id.mail_btn);
+            holder.twitter = (ImageButton) convertView.findViewById(R.id.twitter_btn);
+            holder.email = (ImageButton) convertView.findViewById(R.id.mail_btn);
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
 
         holder.name.setText(rowItem.getName());
         holder.role.setText(rowItem.getRole());
-        holder.twitter.setText(rowItem.getTwitterHandle());
-//        holder.twitter.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_announcement_white_24dp,0,0,0);
-        holder.email.setText(rowItem.getEmail());
+        if(rowItem.getTwitterHandle()==null)
+            holder.twitter.setImageResource(R.drawable.twitter_icon_inactive);
+        else
+            holder.twitter.setImageResource(R.drawable.twitter_icon);
+        holder.email.setImageResource(R.drawable.email_icon);
 
         holder.twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent tweetIntent = new Intent(Intent.ACTION_VIEW);
-                tweetIntent.putExtra(Intent.EXTRA_TEXT, "@"+rowItem.getTwitterHandle() + " ");
-                tweetIntent.setType("text/plain");
+                if (rowItem.getTwitterHandle() != null) {
+                    Intent tweetIntent = new Intent(Intent.ACTION_VIEW);
+                    tweetIntent.putExtra(Intent.EXTRA_TEXT, "@" + rowItem.getTwitterHandle() + " ");
+                    tweetIntent.setType("text/plain");
 
-                PackageManager packManager = context.getPackageManager();
-                List<ResolveInfo> resolvedInfoList = packManager.queryIntentActivities(tweetIntent, PackageManager.MATCH_DEFAULT_ONLY);
+                    PackageManager packManager = context.getPackageManager();
+                    List<ResolveInfo> resolvedInfoList = packManager.queryIntentActivities(tweetIntent, PackageManager.MATCH_DEFAULT_ONLY);
 
-                boolean resolved = false;
-                for(ResolveInfo resolveInfo: resolvedInfoList){
-                    if(resolveInfo.activityInfo.packageName.startsWith("com.twitter.android")){
-                        tweetIntent.setClassName(
-                                resolveInfo.activityInfo.packageName,
-                                resolveInfo.activityInfo.name );
-                        resolved = true;
-                        break;
+                    boolean resolved = false;
+                    for (ResolveInfo resolveInfo : resolvedInfoList) {
+                        if (resolveInfo.activityInfo.packageName.startsWith("com.twitter.android")) {
+                            tweetIntent.setClassName(
+                                    resolveInfo.activityInfo.packageName,
+                                    resolveInfo.activityInfo.name);
+                            resolved = true;
+                            break;
+                        }
                     }
-                }
-                if(resolved){
-                    context.startActivity(tweetIntent);
-                }else{
-                    Intent i = new Intent();
-                    i.putExtra(Intent.EXTRA_TEXT, "");
-                    i.setAction(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse("https://twitter.com/intent/tweet?text=@"+rowItem.getTwitterHandle()));
-                    context.startActivity(i);
+                    if (resolved) {
+                        context.startActivity(tweetIntent);
+                    } else {
+                        Intent i = new Intent();
+                        i.putExtra(Intent.EXTRA_TEXT, "");
+                        i.setAction(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse("https://twitter.com/intent/tweet?text=@" + rowItem.getTwitterHandle()));
+                        context.startActivity(i);
+                    }
                 }
             }
         });
@@ -93,7 +121,7 @@ public class CustomListAdapterCommunity  extends ArrayAdapter<Community> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_SENDTO);
-                Uri data = Uri.parse("mailto:"+rowItem.getEmail());
+                Uri data = Uri.parse("mailto:" + rowItem.getEmail());
                 i.setData(data);
                 context.startActivity(Intent.createChooser(i, "Send mail..."));
 
@@ -102,5 +130,7 @@ public class CustomListAdapterCommunity  extends ArrayAdapter<Community> {
 
         return convertView;
     }
+
+
 
 }

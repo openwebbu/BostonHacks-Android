@@ -24,5 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="7dp"
-        android:text="subList" />
+        android:text="subList"
+        android:textSize="10dp"
+        android:textColor="#E91E63"/>
 </LinearLayout>

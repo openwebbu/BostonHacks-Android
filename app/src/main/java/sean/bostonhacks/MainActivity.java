@@ -57,19 +57,19 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
+        tabLayout.getTabAt(0).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[3]);
+        tabLayout.getTabAt(3).setIcon(tabIcons[2]);
 //        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new OneFragment(), "ONE");
-        adapter.addFrag(new TwoFragment(), "TWO");
-        adapter.addFrag(new ThreeFragment(), "THREE");
-        adapter.addFrag(new FourFragment(), "four");
+        adapter.addFrag(new TwoFragment(), "Announcements");
+        adapter.addFrag(new OneFragment(), "Events");
+        adapter.addFrag(new FourFragment(), "Maps");
+        adapter.addFrag(new ThreeFragment(), "Community");
 //        adapter.addFrag(new FiveFragment(), "Five");
 
         viewPager.setAdapter(adapter);
