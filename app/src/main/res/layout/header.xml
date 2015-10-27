@@ -12,10 +12,15 @@
         android:src="@drawable/slack_banner" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="98dp"
+        android:layout_height="50dp"
         android:text="Connect"
         android:id="@+id/connect_button"
-        android:layout_gravity="right|bottom" />
+        android:layout_gravity="right|bottom"
+        android:background="@drawable/button_outline"
+        android:textColor="#ffffff"
+        android:singleLine="false"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp" />
 
 </FrameLayout>
