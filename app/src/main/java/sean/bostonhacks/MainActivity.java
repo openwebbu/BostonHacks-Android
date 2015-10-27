@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.app.ListFragment;
+import android.view.View;
 
 import com.parse.Parse;
 import com.parse.ParseInstallation;
@@ -44,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
+        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
