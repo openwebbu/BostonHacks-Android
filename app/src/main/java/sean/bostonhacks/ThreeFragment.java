@@ -1,6 +1,8 @@
 package sean.bostonhacks;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.common.collect.Lists;
@@ -26,6 +29,7 @@ import java.util.List;
  */
 public class ThreeFragment extends ListFragment {
     private List<Community> communityMembers;
+    private Button connect_button;
 
     private CustomListAdapterCommunity mAdapter;
     private Handler handler = new Handler();
@@ -52,9 +56,19 @@ public class ThreeFragment extends ListFragment {
 
         // inflate custom header and attach it to the list
         View header = (View) inflater.inflate(R.layout.header, null, false);
-
         ListView mList = (ListView) rootView.findViewById(android.R.id.list);
         mList.addHeaderView(header, null, false);
+
+        View connectButton = rootView.findViewById(R.id.connect_button);
+        connectButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://bostonhacks.slack.com/invite/MTI4MjU4NTk0NDEtMTQ0NTMwODY1MS03YzUwODgxNDI5");
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
         //bind adapter to listfragment
         setListAdapter(mAdapter);
@@ -76,7 +90,7 @@ public class ThreeFragment extends ListFragment {
                     // and notify the adapter
                     communityMembers.clear();
                     for (ParseObject post : Lists.reverse(postList)) {
-                        Community team = new Community(post.getObjectId(), post.getString("name"), post.getString("role"), post.getString("twitter"),post.getString("email"));
+                        Community team = new Community(post.getObjectId(), post.getString("name"), post.getString("role"), post.getString("twitter"), post.getString("email"));
                         communityMembers.add(team);
                     }
                     ((ArrayAdapter<Schedule>) getListAdapter()).notifyDataSetChanged();
@@ -87,7 +101,6 @@ public class ThreeFragment extends ListFragment {
                 }
             }
         });
-
 
     }
 }
