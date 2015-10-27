@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.google.common.collect.Lists;
 import com.parse.FindCallback;
@@ -41,6 +42,14 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        if (AppStatus.getInstance(this.getActivity()).isOnline()) {
+            this.getActivity().findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+
+        } else {
+            Toast.makeText(this.getActivity(), "No internet connection found. Please reconnect and refresh the page.", Toast.LENGTH_LONG).show();
+
+//            Log.v("Home", "############################You are not online!!!!");
+        }
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_two,container,false);
 

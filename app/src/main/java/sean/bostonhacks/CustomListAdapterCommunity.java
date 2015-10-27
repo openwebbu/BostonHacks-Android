@@ -28,20 +28,6 @@ public class CustomListAdapterCommunity  extends ArrayAdapter<Community> {
         this.context = context;
     }
 
-    @Override
-    public int getViewTypeCount() {
-        return 2;
-    }
-
-    @Override
-    public int getItemViewType(int position){
-        Community communityItem = getItem(position);
-
-        if(communityItem.getRole() == "Director"){
-            return 0;
-        }
-        return 1;
-    }
 
     /*private view holder class*/
     private class ViewHolder {
@@ -49,7 +35,6 @@ public class CustomListAdapterCommunity  extends ArrayAdapter<Community> {
         TextView role;
         ImageButton twitter;
         ImageButton email;
-        ImageView slackHeader;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -62,12 +47,6 @@ public class CustomListAdapterCommunity  extends ArrayAdapter<Community> {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.communitylayout, null);
             holder = new ViewHolder();
-
-            if(viewType == 0){
-                convertView = mInflater.inflate(R.layout.snippet1, null);
-                holder.slackHeader = (ImageView) convertView.findViewById(R.id.slackHeader);
-                holder.slackHeader.setImageResource(R.drawable.slack_banner);
-            }
             holder.name = (TextView) convertView.findViewById(R.id.name);
             holder.role = (TextView) convertView.findViewById(R.id.role);
             holder.twitter = (ImageButton) convertView.findViewById(R.id.twitter_btn);
