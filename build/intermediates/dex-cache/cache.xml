@@ -2,60 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="/Users/Sean/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.8.2/d27c24204c5e507b16fec01006b3d0f1ec42aed4/joda-time-2.8.2.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\classes-497a264acc660b929a180659db773d2039127d79.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.1\44780c2cf98f6a3cf4e77f1234d644758b329201\bolts-android-1.2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.1-669cea47559651ef7ca69ff5459cd6f3028ab0da.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-a4b09f4f8bd8a16437f13919040a94063275e916.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="cce0823396aa693798f8882e64213b1772032b09">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\guava-18.0-0ceded319472f142205962edcdf55821d1cf0621.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\classes-d124ce8c4f3af569b98149fb786e3405d3744ba8.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.10.3\36366e460af2c0f224bb8f70b64e3302f638b138\parse-android-1.10.3.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="36366e460af2c0f224bb8f70b64e3302f638b138">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\parse-android-1.10.3-47ac32bb4ae2c8ccd62efa6a92c30068a0955654.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-4e632f3f7c7afef6f1e90ece8b73cf32768afed8.jar" />
-    </item>
-    <item
-        jar="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Claire\Desktop\BostonHacks-Android\app\build\intermediates\pre-dexed\debug\classes-06e3f5ea9870f2cfef9583e44c456259ae10b2b6.jar" />
+        sha1="d27c24204c5e507b16fec01006b3d0f1ec42aed4">
+        <dex dex="/Users/Sean/Documents/Coding/BostonHacks-Android/app/build/intermediates/pre-dexed/debug/joda-time-2.8.2-cc94c16a5466b478d9ac17ae527d6d6ca03f9aa0.jar" />
     </item>
 
 </items>

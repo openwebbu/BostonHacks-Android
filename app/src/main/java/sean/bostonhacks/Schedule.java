@@ -1,5 +1,7 @@
 package sean.bostonhacks;
 
+import android.util.Log;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -40,7 +42,9 @@ public class Schedule {
     public String getTimeStamp(){
         String amPM = "";
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+
         cal.setTime(timestamp);
+        
         if(cal.get(Calendar.AM_PM) ==0){
             amPM = "AM";
         }
@@ -48,7 +52,7 @@ public class Schedule {
             amPM = "PM";
         }
         String curTime = String.format("%d:%02d", cal.get(cal.HOUR),cal.get(cal.MINUTE));
-        return cal.getDisplayName(cal.DAY_OF_WEEK, cal.SHORT, Locale.US) + " " + curTime + amPM;
+        return curTime + amPM;
     }
     public void setTimeStamp(Date createdAt){
         this.timestamp = createdAt;

@@ -38,7 +38,7 @@ public class CustomListAdapterSchedule extends ArrayAdapter<Schedule> {
         LayoutInflater mInflater = (LayoutInflater) context
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.rowlayout, null);
+            convertView = mInflater.inflate(R.layout.schedule_layout, null);
             holder = new ViewHolder();
             holder.scheduleTitle = (TextView) convertView.findViewById(R.id.title);
             holder.scheduleContent = (TextView) convertView.findViewById(R.id.content);
