@@ -71,7 +71,7 @@ public class ThreeFragment extends ListFragment {
         connectButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://bostonhacks.slack.com/invite/MTI4MjU4NTk0NDEtMTQ0NTMwODY1MS03YzUwODgxNDI5");
+                Uri uri = Uri.parse("https://bostonhacks.slack.com");
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
