@@ -69,6 +69,7 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_one, container, false);
+
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
 
