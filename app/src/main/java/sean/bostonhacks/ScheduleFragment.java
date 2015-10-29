@@ -1,44 +1,29 @@
 package sean.bostonhacks;
 
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.app.ListActivity;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import com.parse.Parse;
-import com.parse.ParseInstallation;
+
 import com.parse.ParseObject;
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener {
+public class ScheduleFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener {
     private List<Schedule> posts;
 
     private SwipeRefreshLayout swipeLayout;
@@ -47,7 +32,7 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 
 
 
-    public OneFragment() {
+    public ScheduleFragment() {
         // Required empty public constructor
     }
 
@@ -78,7 +63,7 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
         }
 
         // Inflate the layout for this fragment
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_one, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_schedule, container, false);
 
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
