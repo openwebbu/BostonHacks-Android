@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:paddingTop="7dp"
     android:paddingBottom="7dp"
-    android:paddingRight="7dp"
+    android:paddingRight="16dp"
     android:paddingLeft="16dp"
     android:layout_gravity="fill"
     android:text="List" />
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="7dp"
-        android:paddingRight="7dp"
+        android:paddingRight="16dp"
         android:paddingLeft="16dp"
         android:text="subList" />
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
-        android:paddingRight="7dp"
+        android:paddingRight="16dp"
         android:paddingLeft="16dp"
         android:text="subList"
         android:textSize="10dp"

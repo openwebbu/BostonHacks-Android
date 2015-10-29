@@ -4,8 +4,6 @@ import android.text.format.DateUtils;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class Announcements {
 
@@ -29,12 +27,18 @@ public class Announcements {
         this.id = id;
     }
     public String getTitle() {
+        if (title==null || title.isEmpty()) {
+            title = "No Title";
+        }
         return title;
     }
     public void setTitle(String title) {
         this.title = title;
     }
     public String getContent() {
+        if (content==null || content.isEmpty()) {
+            content = "No Description";
+        }
         return content;
     }
     public void setContent(String content) {
