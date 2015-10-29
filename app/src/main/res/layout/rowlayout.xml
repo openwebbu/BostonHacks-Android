@@ -8,7 +8,10 @@
     android:textSize="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="7dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:paddingRight="7dp"
+    android:paddingLeft="16dp"
     android:layout_gravity="fill"
     android:text="List" />
 
@@ -16,14 +19,19 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="7dp"
+        android:paddingBottom="7dp"
+        android:paddingRight="7dp"
+        android:paddingLeft="16dp"
         android:text="subList" />
 
     <TextView
         android:id="@+id/timestamp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="7dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingRight="7dp"
+        android:paddingLeft="16dp"
         android:text="subList"
         android:textSize="10dp"
         android:textColor="#E91E63"/>
