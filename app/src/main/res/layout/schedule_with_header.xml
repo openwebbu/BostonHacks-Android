@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="false"
+    android:divider="@null">
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="32dp"
+        android:paddingTop="20dp"
+        android:textColor="#E91E63" />
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:clickable="false"
+    android:divider="@null">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="Large Text"
+            android:id="@+id/timestamp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="12dp"
+            android:textSize="14dp"
+            android:textColor="#8A000000"
+            android:clickable="false"/>
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+        <!--android:text="Small Text"-->
+        <!--android:id="@+id/test"-->
+        <!--android:layout_below="@+id/role"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:textSize="12sp"-->
+        <!--/>-->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/content"
+            android:background="@null"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:textSize="14dp"
+            android:textColor="#8A000000"
+            android:layout_below="@+id/title"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignStart="@+id/title"
+            android:clickable="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:textColor="#DE000000"
+            android:textSize="16dp"
+            android:background="@null"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:layout_alignTop="@+id/timestamp"
+            android:layout_toRightOf="@+id/timestamp"
+            android:layout_toEndOf="@+id/timestamp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            android:clickable="false"/>
+</RelativeLayout>
+    </LinearLayout>

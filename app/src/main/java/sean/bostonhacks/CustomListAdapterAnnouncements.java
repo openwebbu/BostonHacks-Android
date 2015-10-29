@@ -51,6 +51,8 @@ public class CustomListAdapterAnnouncements extends ArrayAdapter<Announcements> 
         holder.scheduleContent.setText(rowItem.getContent());
         holder.scheduleTimeStamp.setText(rowItem.getTimeStamp());
 
+        convertView.setClickable(false);
+        convertView.setEnabled(false);
         return convertView;
     }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content" android:paddingTop="10dp" android:paddingBottom="10dp">
 <TextView
     android:id="@+id/title"
     android:textColor="#DE000000"
-    android:textSize="20dp"
+    android:textSize="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="7dp"
@@ -20,6 +20,7 @@
         android:textColor="#8A000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="14dp"
         android:paddingBottom="7dp"
         android:paddingRight="16dp"
         android:paddingLeft="16dp"
@@ -35,5 +36,5 @@
         android:paddingLeft="16dp"
         android:text="subList"
         android:textSize="10dp"
-        android:textColor="#E91E63"/>
+        android:textColor="#7A000000"/>
 </LinearLayout>
