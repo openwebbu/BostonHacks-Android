@@ -3,21 +3,12 @@ package sean.bostonhacks;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
-
-import com.parse.Parse;
-import com.parse.ParseInstallation;
-import com.parse.ParseObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,10 +60,10 @@ public class MainActivity extends ActionBarActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new TwoFragment(), "Announcements");
-        adapter.addFrag(new OneFragment(), "Events");
-        adapter.addFrag(new FourFragment(), "Maps");
-        adapter.addFrag(new ThreeFragment(), "Community");
+        adapter.addFrag(new AnnouncementsFragment(), "Announcements");
+        adapter.addFrag(new ScheduleFragment(), "Events");
+        adapter.addFrag(new MapsFragment(), "Maps");
+        adapter.addFrag(new ConnectFragment(), "Community");
         viewPager.setAdapter(adapter);
 
     }

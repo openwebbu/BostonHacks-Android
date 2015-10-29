@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,14 +30,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThreeFragment extends ListFragment {
+public class ConnectFragment extends ListFragment {
     private List<Community> communityMembers;
     private Button connect_button;
 
     private CustomListAdapterCommunity mAdapter;
     private Handler handler = new Handler();
 
-    public ThreeFragment() {
+    public ConnectFragment() {
         // Required empty public constructor
     }
 
@@ -47,7 +46,7 @@ public class ThreeFragment extends ListFragment {
     {
         super.onCreateOptionsMenu(menu, inflater);
         menu.clear();
-        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Maps");
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Connect");
 
     }
 
@@ -69,7 +68,7 @@ public class ThreeFragment extends ListFragment {
         }
 
         // Inflate the layout for this fragment
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_three, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_connect, container, false);
 
         //create adapter
         mAdapter = new CustomListAdapterCommunity(getActivity(), android.R.id.list, communityMembers);

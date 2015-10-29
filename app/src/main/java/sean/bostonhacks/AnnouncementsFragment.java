@@ -3,8 +3,6 @@ package sean.bostonhacks;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,13 +23,13 @@ import java.util.List;
 
 
 
-public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener {
+public class AnnouncementsFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener {
     private List<Announcements> announcements;
     private CustomListAdapterAnnouncements mAdapter;
 
     private SwipeRefreshLayout swipeLayout;
 
-    public TwoFragment() {
+    public AnnouncementsFragment() {
         // Required empty public constructor
     }
 
@@ -69,7 +67,7 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
         // Inflate the layout for this fragment
 
 
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_two,container,false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_announcements,container,false);
 
         //refresh thing
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
