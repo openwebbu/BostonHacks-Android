@@ -64,6 +64,7 @@ public class ScheduleFragment extends ListFragment implements SwipeRefreshLayout
         tabLayout.getTabAt(3).setIcon(connect);
 
     }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 

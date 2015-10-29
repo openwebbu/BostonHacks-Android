@@ -43,10 +43,6 @@ public class MainActivity extends ActionBarActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-//        ParseObject testObject = new ParseObject("TestObject");
-//        testObject.put("foo", "bar");
-//        testObject.saveInBackground();
-
 
     }
 

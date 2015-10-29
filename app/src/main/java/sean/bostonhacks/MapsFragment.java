@@ -21,7 +21,6 @@ public class MapsFragment extends Fragment{
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
         ((MainActivity)getActivity()).getSupportActionBar().setTitle("Maps");
         TabLayout tabLayout = (TabLayout) (getActivity()).findViewById(R.id.tabs);
         Drawable announcements = getActivity().getResources().getDrawable(R.drawable.ic_announcement_white_24dp);
@@ -37,7 +36,6 @@ public class MapsFragment extends Fragment{
         tabLayout.getTabAt(2).setIcon(maps);
         tabLayout.getTabAt(3).setIcon(connect);
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
