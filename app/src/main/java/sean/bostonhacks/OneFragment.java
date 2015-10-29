@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -53,12 +54,21 @@ public class OneFragment extends ListFragment implements SwipeRefreshLayout.OnRe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         posts = new ArrayList<Schedule>();
     }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Events");
 
+    }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         if (AppStatus.getInstance(this.getActivity()).isOnline()) {
             this.getActivity().findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 

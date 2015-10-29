@@ -3,8 +3,12 @@ package sean.bostonhacks;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -35,9 +39,21 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setHasOptionsMenu(true);
+
         announcements = new ArrayList<Announcements>();
 
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Announcements");
+
+    }
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +67,8 @@ public class TwoFragment extends ListFragment implements SwipeRefreshLayout.OnRe
 //            Log.v("Home", "############################You are not online!!!!");
         }
         // Inflate the layout for this fragment
+
+
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_two,container,false);
 
         //refresh thing
