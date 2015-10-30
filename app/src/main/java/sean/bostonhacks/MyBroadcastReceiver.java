@@ -32,7 +32,6 @@ public class MyBroadcastReceiver extends ParsePushBroadcastReceiver {
 
     private static final String TAG = "MyCustomReceiver";
     private int NOTIFICATION_ID = 1;
-    public int numMessages = 0;
     private NotificationManager mNotifM;
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -41,8 +40,6 @@ public class MyBroadcastReceiver extends ParsePushBroadcastReceiver {
 
     @Override
     public void onPushReceive(Context context, Intent intent){
-        Log.v("got your notifcation", "got it");
-
         Notification notification = getNotification(context, intent);
 
         if (notification != null) {
@@ -51,7 +48,6 @@ public class MyBroadcastReceiver extends ParsePushBroadcastReceiver {
             }
         }
     }
-
 
     @Override
     public Notification getNotification(Context context, Intent intent) {
@@ -64,22 +60,19 @@ public class MyBroadcastReceiver extends ParsePushBroadcastReceiver {
         Intent deleteIntent = new Intent(ParsePushBroadcastReceiver.ACTION_PUSH_DELETE);
         deleteIntent.setPackage(packageName);
 
-        numMessages++;
         Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_announcement_white_24dp);
         mNotifM = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder mBuilder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.ic_announcement_white_24dp)
                         .setContentTitle("Bostonhacks")
-                        .setContentText("You have " + numMessages + " new notifications")
-                        .setNumber(++numMessages);
-        Log.v("built new notification", "The title of the notification: " + mBuilder.mContentTitle + ", on message number " + numMessages);
+                        .setContentText("New announcements have been posted!");
+        Log.v("built new notification", "The title of the notification: " + mBuilder.mContentTitle);
         return mBuilder.build();
     }
 
     @Override
     public void onPushOpen(Context context, Intent intent) {
-
         String uriString = null;
         try {
             JSONObject pushData = new JSONObject(intent.getStringExtra(KEY_PUSH_DATA));
