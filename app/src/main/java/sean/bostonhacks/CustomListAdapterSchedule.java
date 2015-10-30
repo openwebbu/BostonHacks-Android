@@ -51,43 +51,44 @@ public class CustomListAdapterSchedule extends ArrayAdapter<Schedule> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = null;
         ViewHolder holder = null;
         Schedule rowItem = getItem(position);
         int rowType = getItemType(rowItem);
         LayoutInflater mInflater = (LayoutInflater) context
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        if (convertView == null) {
-            holder = new ViewHolder();
+        holder = new ViewHolder();
 
-            switch(rowType) {
-                case 0:
-                    convertView = mInflater.inflate(R.layout.schedule_with_header, null);
-                    holder.day = (TextView) convertView.findViewById(R.id.day);
-                    if(setDivider)
-                        convertView.findViewById(R.id.divider).setVisibility(View.VISIBLE);
-                    else
-                        convertView.findViewById(R.id.divider).setVisibility(View.GONE);
-                    holder.scheduleTitle = (TextView) convertView.findViewById(R.id.title);
-                    holder.scheduleContent = (TextView) convertView.findViewById(R.id.content);
-                    holder.scheduleTimeStamp = (TextView) convertView.findViewById(R.id.timestamp);
-                    break;
-                case 1:
-                    convertView = mInflater.inflate(R.layout.schedule_layout, null);
-                    holder.scheduleTitle = (TextView) convertView.findViewById(R.id.title);
-                    holder.scheduleContent = (TextView) convertView.findViewById(R.id.content);
-                    holder.scheduleTimeStamp = (TextView) convertView.findViewById(R.id.timestamp);
-                    break;
-            }
-            convertView.setTag(holder);
-
-        } else
-            holder = (ViewHolder) convertView.getTag();
-        if(rowType == 0) {
-            holder.day.setText(theDay);
+        switch(rowType) {
+            case 0:
+                convertView = mInflater.inflate(R.layout.schedule_with_header, null);
+                holder.day = (TextView) convertView.findViewById(R.id.day);
+                if (setDivider)
+                    convertView.findViewById(R.id.divider).setVisibility(View.VISIBLE);
+                else
+                    convertView.findViewById(R.id.divider).setVisibility(View.GONE);
+                holder.scheduleTitle = (TextView) convertView.findViewById(R.id.title);
+                holder.scheduleContent = (TextView) convertView.findViewById(R.id.content);
+                holder.scheduleTimeStamp = (TextView) convertView.findViewById(R.id.timestamp);
+                convertView.setTag(holder);
+                holder.day.setText(theDay);
+                holder.scheduleTitle.setText(rowItem.getTitle());
+                holder.scheduleContent.setText(rowItem.getContent());
+                holder.scheduleTimeStamp.setText(rowItem.getTimeStamp());
+                break;
+            case 1:
+                convertView = mInflater.inflate(R.layout.schedule_layout, null);
+                holder.scheduleTitle = (TextView) convertView.findViewById(R.id.title);
+                holder.scheduleContent = (TextView) convertView.findViewById(R.id.content);
+                holder.scheduleTimeStamp = (TextView) convertView.findViewById(R.id.timestamp);
+                convertView.setTag(holder);
+                holder.scheduleTitle.setText(rowItem.getTitle());
+                holder.scheduleContent.setText(rowItem.getContent());
+                holder.scheduleTimeStamp.setText(rowItem.getTimeStamp());
+                break;
         }
-        holder.scheduleTitle.setText(rowItem.getTitle());
-        holder.scheduleContent.setText(rowItem.getContent());
-        holder.scheduleTimeStamp.setText(rowItem.getTimeStamp());
+
+
 
         convertView.setClickable(false);
         convertView.setEnabled(false);

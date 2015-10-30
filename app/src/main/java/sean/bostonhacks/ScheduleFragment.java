@@ -86,6 +86,7 @@ public class ScheduleFragment extends ListFragment implements SwipeRefreshLayout
         //create adapter
         mAdapter = new CustomListAdapterSchedule(getActivity(), android.R.id.list, posts);
         //bind adapter to listfragment
+
         setListAdapter(mAdapter);
         refreshPostList();
 

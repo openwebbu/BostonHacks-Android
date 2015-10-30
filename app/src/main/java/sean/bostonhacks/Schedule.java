@@ -2,10 +2,6 @@ package sean.bostonhacks;
 
 import android.util.Log;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;

@@ -35,6 +35,6 @@
         android:paddingRight="16dp"
         android:paddingLeft="16dp"
         android:text="subList"
-        android:textSize="10dp"
-        android:textColor="#7A000000"/>
+        android:textSize="12dp"
+        android:textColor="#61000000"/>
 </LinearLayout>
