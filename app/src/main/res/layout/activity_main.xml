@@ -43,5 +43,6 @@
         android:layout_gravity="fill"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:paddingBottom="56dp"
-        android:clipToPadding="false" />
+        android:clipToPadding="false"
+       />
 </android.support.design.widget.CoordinatorLayout>
