@@ -17,6 +17,7 @@ public class CustomListAdapterSchedule extends ArrayAdapter<Schedule> {
 
     Context context;
     String theDay = "";
+    boolean setDivider = false;
 
     public CustomListAdapterSchedule(Context context, int textViewResourceId, List<Schedule> objects) {
         super(context, textViewResourceId, objects);
@@ -27,10 +28,12 @@ public class CustomListAdapterSchedule extends ArrayAdapter<Schedule> {
     public int getItemType(Schedule scheduleItem) {
         if(scheduleItem.getTitle().equals("Registration")){
             theDay="Saturday";
+            setDivider = false;
             return 0;
         }
         else if(scheduleItem.getTitle().equals("Midnight Snack")){
             theDay="Sunday";
+            setDivider = true;
             return 0;
         }
         else {
@@ -40,6 +43,7 @@ public class CustomListAdapterSchedule extends ArrayAdapter<Schedule> {
 
     /*private view holder class*/
     private class ViewHolder {
+        TextView divider;
         TextView day;
         TextView scheduleTitle;
         TextView scheduleContent;
@@ -59,6 +63,10 @@ public class CustomListAdapterSchedule extends ArrayAdapter<Schedule> {
                 case 0:
                     convertView = mInflater.inflate(R.layout.schedule_with_header, null);
                     holder.day = (TextView) convertView.findViewById(R.id.day);
+                    if(setDivider)
+                        convertView.findViewById(R.id.divider).setVisibility(View.VISIBLE);
+                    else
+                        convertView.findViewById(R.id.divider).setVisibility(View.GONE);
                     holder.scheduleTitle = (TextView) convertView.findViewById(R.id.title);
                     holder.scheduleContent = (TextView) convertView.findViewById(R.id.content);
                     holder.scheduleTimeStamp = (TextView) convertView.findViewById(R.id.timestamp);

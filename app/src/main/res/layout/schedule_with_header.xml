@@ -3,8 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:clickable="false"
-    android:divider="@null">
+    android:clickable="false">
+    <TextView
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3A000000"/>
     <TextView
         android:id="@+id/day"
         android:layout_width="fill_parent"
