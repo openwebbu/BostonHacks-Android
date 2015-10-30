@@ -30,75 +30,52 @@ import java.util.Random;
  */
 public class MyBroadcastReceiver extends ParsePushBroadcastReceiver {
 
-    private static final String TAG = "MyCustomReceiver";
-    private int NOTIFICATION_ID = 1;
-    private NotificationManager mNotifM;
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        onPushReceive(context,intent);
-    }
-
-    @Override
-    public void onPushReceive(Context context, Intent intent){
-        Notification notification = getNotification(context, intent);
-
-        if (notification != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
-                mNotifM.notify(NOTIFICATION_ID, notification);
-            }
-        }
-    }
-
-    @Override
-    public Notification getNotification(Context context, Intent intent) {
-
-        String packageName = context.getPackageName();
-
-        Intent contentIntent = new Intent(ParsePushBroadcastReceiver.ACTION_PUSH_OPEN);
-        contentIntent.setPackage(packageName);
-
-        Intent deleteIntent = new Intent(ParsePushBroadcastReceiver.ACTION_PUSH_DELETE);
-        deleteIntent.setPackage(packageName);
-
-        Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_announcement_white_24dp);
-        mNotifM = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationCompat.Builder mBuilder =
-                (NotificationCompat.Builder) new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.ic_announcement_white_24dp)
-                        .setContentTitle("Bostonhacks")
-                        .setContentText("New announcements have been posted!");
-        Log.v("built new notification", "The title of the notification: " + mBuilder.mContentTitle);
-        return mBuilder.build();
-    }
+    private final String TAG = "PUSH_NOTIF";
+    public int numMessages = 0;
 
     @Override
     public void onPushOpen(Context context, Intent intent) {
-        String uriString = null;
+        Log.i(TAG, "onPushOpen triggered!");
+        Intent i = new Intent(context, MainActivity.class);
+        i.putExtras(intent.getExtras());
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
+    }
+
+    @Override
+    public void onPushReceive(Context context, Intent intent) {
+//        Log.i(TAG, "onPushReceive triggered!");
+
+        JSONObject pushData;
+        String alert = null;
+        String title = null;
         try {
-            JSONObject pushData = new JSONObject(intent.getStringExtra(KEY_PUSH_DATA));
-            uriString = pushData.optString("uri", null);
-        } catch (JSONException e) {
-            Log.e(TAG, "Unexpected JSONException when receiving push data: ", e);
-        }
+            pushData = new JSONObject(intent.getStringExtra(MyBroadcastReceiver.KEY_PUSH_DATA));
+            alert = pushData.getString("alert");
+            title = pushData.getString("title");
+        } catch (JSONException e) {}
 
-        Class<? extends Activity> cls = getActivity(context, intent);
-        Intent activityIntent;
-        if (uriString != null) {
-            activityIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uriString));
-        } else {
-            activityIntent = new Intent(context, cls);
-        }
+//        Log.i(TAG,"alert is " + alert);
+//        Log.i(TAG,"title is " + title);
 
-        activityIntent.putExtras(intent.getExtras());
-    /*
-      In order to remove dependency on android-support-library-v4
-      The reason why we differentiate between versions instead of just using context.startActivity
-      for all devices is because in API 11 the recommended conventions for app navigation using
-      the back key changed.
-     */
+        Intent cIntent = new Intent(MyBroadcastReceiver.ACTION_PUSH_OPEN);
+        cIntent.putExtras(intent.getExtras());
+        cIntent.setPackage(context.getPackageName());
+
+        PendingIntent pContentIntent =
+                PendingIntent.getBroadcast(context, 0 /*just for testing*/, cIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+        builder
+                .setSmallIcon(R.drawable.ic_announcement_white_24dp)
+                .setContentTitle("New announcement")
+                .setContentText(alert)
+                .setContentIntent(pContentIntent)
+                .setAutoCancel(true)
+                .setNumber(numMessages);
 
 
-        context.startActivity(activityIntent);
-
+        NotificationManager myNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        myNotificationManager.notify(1, builder.build());
     }
 }
