@@ -12,6 +12,33 @@
         tools:context="info.androidhive.materialtabs.fragments.FourFragment"
         android:orientation="vertical">
 
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/main_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/main_map"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/darker_gray"/>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,57 +47,16 @@
 
         <ImageView
             android:id="@+id/bostonhacks_legend"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:src="@drawable/bostonhacks_legend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:maxWidth="300dp"
+            android:maxHeight="300dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/legend"
             android:layout_weight="1" />
 
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:weightSum="10">
-
-        <ImageView
-            android:id="@+id/bostonhacks_floor3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:src="@drawable/bostonhacks_floor3"
-            android:layout_weight="1" />
-    </TableRow>
-
-    <TableRow
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:gravity="center"
-       android:weightSum="10">
-
-       <ImageView
-            android:id="@+id/bostonhacks_floor2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:src="@drawable/bostonhacks_floor2"
-            android:layout_weight="1" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:weightSum="10">
-
-        <ImageView
-            android:id="@+id/bostonhacks_floor1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:src="@drawable/bostonhacks_floor1"
-            android:layout_weight="1" />
     </TableRow>
 
     <TableRow
@@ -81,13 +67,74 @@
 
         <ImageView
             android:id="@+id/bostonhacks_floor0"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:src="@drawable/bostonhacks_floor0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:maxWidth="300dp"
+            android:maxHeight="300dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/floor_0"
             android:layout_weight="1" />
     </TableRow>
 
-</LinearLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/bostonhacks_floor1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:maxWidth="350dp"
+                android:maxHeight="350dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/floor_1"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/bostonhacks_floor2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:maxWidth="350dp"
+                android:maxHeight="350dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/floor_2"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/bostonhacks_floor3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:maxWidth="350dp"
+                android:maxHeight="350dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/floor_3"
+                android:layout_weight="1" />
+        </TableRow>
+
+    </LinearLayout>
 
 </ScrollView>
