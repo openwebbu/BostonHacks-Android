@@ -8,7 +8,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#3A000000"/>
+        android:background="@color/divider"/>
     <TextView
         android:id="@+id/day"
         android:layout_width="fill_parent"
