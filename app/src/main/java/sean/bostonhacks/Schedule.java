@@ -34,6 +34,9 @@ public class Schedule {
         this.title = title;
     }
     public String getContent() {
+        if (content==null || content.isEmpty()) {
+            content = "No location specified";
+        }
         return content;
     }
     public void setContent(String content) {

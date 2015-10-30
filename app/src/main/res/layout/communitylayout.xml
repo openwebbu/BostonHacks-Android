@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="8dp"
-    android:paddingRight="8dp"
+    android:paddingRight="16dp"
     android:paddingTop="10dp"
     android:padding="10dp"
     android:background="@android:color/white">
@@ -46,8 +46,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="@null"
-        android:paddingBottom="5dp"
-        android:paddingRight="8dp"/>
+        android:paddingBottom="5dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -56,8 +55,7 @@
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/mail_btn"
         android:background="@null"
-        android:paddingBottom="5dp"
-        android:paddingRight="8dp"/>
+        android:paddingBottom="5dp"/>
 
 
 
