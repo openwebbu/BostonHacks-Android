@@ -15,9 +15,11 @@
         android:layout_height="wrap_content"
         android:textSize="14dp"
         android:gravity="center_vertical"
-        android:paddingLeft="32dp"
+        android:paddingLeft="16dp"
         android:paddingTop="20dp"
-        android:textColor="#E91E63" />
+        android:layout_marginBottom="16dp"
+        android:textColor="#E91E63"
+        android:textStyle="bold"/>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -30,20 +32,20 @@
     android:clickable="false"
     android:divider="@null">
 
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:text="Large Text"
-            android:id="@+id/timestamp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:paddingLeft="12dp"
-            android:textSize="14dp"
-            android:textColor="#8A000000"
-            android:clickable="false"/>
-
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Large Text"
+        android:id="@+id/timestamp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="8dp"
+        android:paddingTop="2dp"
+        android:textSize="14dp"
+        android:textColor="#DE000000"
+        android:clickable="false"/>
         <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -84,8 +86,8 @@
             android:layout_alignTop="@+id/timestamp"
             android:layout_toRightOf="@+id/timestamp"
             android:layout_toEndOf="@+id/timestamp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginStart="28dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:clickable="false"/>
 </RelativeLayout>
     </LinearLayout>

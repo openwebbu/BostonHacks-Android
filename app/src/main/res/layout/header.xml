@@ -13,7 +13,7 @@
 
     <Button
         android:layout_width="85dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:text="Join"
         android:id="@+id/connect_button"
         android:layout_gravity="right|bottom"
@@ -21,6 +21,6 @@
         android:textColor="@color/colorPrimary"
         android:singleLine="false"
         android:layout_marginRight="11dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="14dp"/>
 
 </FrameLayout>
